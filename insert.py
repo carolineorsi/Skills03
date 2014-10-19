@@ -3,11 +3,10 @@ import sqlite3
 DB = None
 CONN = None
 
-def connect_to_db(db_name):
+def connect_to_db():
 	global DB, CONN
-	CONN = sqlite3.connect(db_name)
+	CONN = sqlite3.connect("melons.db")
 	DB = CONN.cursor()
-	return None
 
 def process_csv(filename):
 	f = open(filename)
@@ -20,15 +19,23 @@ def process_csv(filename):
 	return records
 
 def insert_customers(records):
-	for item in records:
-		query = """INSERT INTO customers (customer_id, first, last, email, telephone, called) VALUES ?, ?, ?, ?, ?, ?"""
-		db.execute(query, (item[0], item[1], item[2], item[3], item[4], item[5]))
-		return None
+	for i in range(1, len(records)):
+		query = """INSERT INTO customers VALUES (?, ?, ?, ?, ?, ?)"""
+		DB.execute(query, (records[i][0], records[i][1], records[i][2], records[i][3], records[i][4], records[i][5]))
+	return None
 
+def check_records():
+	query = """SELECT * FROM customers"""
+	DB.execute(query, )
+	print DB.fetchall()
+	return None
 
 def main():
-	connect_to_db("melons.db")
-	process_csv("customers.csv")
+	connect_to_db()
+	record_list = process_csv("customers.csv")
+	insert_customers(record_list)
+
+	check_records()
 
 	CONN.close()
 
