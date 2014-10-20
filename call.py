@@ -10,99 +10,68 @@ call.py - Telemarketing script that displays the next name
 """
 
 import time
+import sqlite3
 
-# Load the customers from the passed filename
-# Return a dictionary containing the customer data
-#    (key = customer_id)
-def load_customers(filename):
-	customers = {}
-	f = open(filename)
+DB = None
+CONN = None
 
-	# First line of the file should be the header, 
-	#   split that into a list
-	header = f.readline().rstrip().split(',')
+def connect_to_db(db_name):
+	global DB, CONN
+	CONN = sqlite3.connect(db_name)
+	DB = CONN.cursor()
 
-	# Process each line in a file, create a new
-	#   dict for each customer
-	for line in f:
-		data = line.rstrip().split(',')
-		customer = {}
+def get_next_customer():
+	query = """ SELECT customer_id, first, last, telephone FROM customers WHERE called = '' """
+	DB.execute(query, )
+	row = DB.fetchone()
+	return row
 
-		# Loop through each column, adding the data
-		#   to the dictionary using the header keys
-		for i in range(len(header)):
-			customer[header[i]] = data[i]
-
-		# Add the customer to our dictionary by customer id
-		customers[customer['customer_id']] = customer
-
-	# Close the file
-	f.close()
-
-	return customers
-
-# Load the orders from the passed filename
-# Return a list of all the orders
-def load_orders(filename):
-	orders = []
-	f = open(filename)
-
-	# First line of the file should be the header, 
-	#   split that into a list
-	header = f.readline().rstrip().split(',')
-
-	# Process each line in a file, create a new
-	#   dict for each order
-	for line in f:
-		data = line.rstrip().split(',')
-
-		# Create a dictionary for the order by combining
-		#   the header list and the data list
-		order = dict(zip(header, data))
-
-		# Add the order to our list of orders to return
-		orders.append(order)
-
-	# Close the file
-	f.close()
-
-	return orders
-
-def display_customer(customer):
+def display_customer(row):
 	print "---------------------"
 	print "Next Customer to call"
 	print "---------------------\n"
-	print "Name: ", customer.get('first', ''), customer.get('last', '')
-	print "Phone: ", customer.get('telephone')
+	print "Name: ", row[1], row[2]
+	print "Phone: ", row[3]
 	print "\n"
 
-def update_customer_file(filename, customer_id):
-	lines = open(filename, 'r').readlines()
+def update_records(row):
+	date = "10/19/14"
+	query = """ UPDATE customers SET called = ? WHERE customer_id = ? """
+	DB.execute(query, (date, row[0]))
+	CONN.commit()
 
-	for i in range(len(lines)):
-		if lines[i].startswith(customer_id):
-			lines[i] = lines[i][0:-1] + time.strftime('%m/%d/%Y') + '\n'
+# def update_customer_file(filename, customer_id):
+# 	lines = open(filename, 'r').readlines()
 
-	out = open(filename, 'w')
-	out.writelines(lines)
+# 	for i in range(len(lines)):
+# 		if lines[i].startswith(customer_id):
+# 			lines[i] = lines[i][0:-1] + time.strftime('%m/%d/%Y') + '\n'
 
-	out.close()
+# 	out = open(filename, 'w')
+# 	out.writelines(lines)
+
+	# out.close()
 
 def main():
-	# Load data from our csv files
-	customers = load_customers('customers.csv')
-	orders    = load_orders('orders.csv')
+	connect_to_db("melons.db")
+	customer = get_next_customer()
+	display_customer(customer)
+	update_records(customer)
 
-	# Loop through each order
-	for order in orders:
-		# Is this order over 20 watermelon?
-		if order.get('num_watermelons', 0) > 20:
-			# Has this customer not been contacted yet?
-			customer = customers.get(order.get('customer_id', 0), 0)
-			if customer.get('called', '') == '':
-				display_customer(customer)
-				update_customer_file('customers.csv', customer['customer_id'])
-				break
+	# # Load data from our csv files
+	# customers = load_customers('customers.csv')
+	# orders    = load_orders('orders.csv')
+
+	# # Loop through each order
+	# for order in orders:
+	# 	# Is this order over 20 watermelon?
+	# 	if order.get('num_watermelons', 0) > 20:
+	# 		# Has this customer not been contacted yet?
+	# 		customer = customers.get(order.get('customer_id', 0), 0)
+	# 		if customer.get('called', '') == '':
+	# 			display_customer(customer)
+	# 			update_customer_file('customers.csv', customer['customer_id'])
+	# 			break
 
 if __name__ == '__main__':
 	main()

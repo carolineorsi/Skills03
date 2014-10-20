@@ -22,20 +22,27 @@ def insert_customers(records):
 	for i in range(1, len(records)):
 		query = """INSERT INTO customers VALUES (?, ?, ?, ?, ?, ?)"""
 		DB.execute(query, (records[i][0], records[i][1], records[i][2], records[i][3], records[i][4], records[i][5]))
+		CONN.commit()
 	return None
 
-def check_records():
-	query = """SELECT * FROM customers"""
-	DB.execute(query, )
-	print DB.fetchall()
-	return None
+def insert_orders(records):
+	for i in range(1, len(records)):
+		query = """INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"""
+		DB.execute(query, (records[i][0], records[i][1], records[i][2], 
+			records[i][3], records[i][4], records[i][5], records[i][6], 
+			records[i][7], records[i][8], records[i][9], records[i][10], 
+			records[i][11], records[i][12], records[i][13]))
+		print DB.fetchone()
+		CONN.commit()
+
+	return None	
 
 def main():
 	connect_to_db()
-	record_list = process_csv("customers.csv")
-	insert_customers(record_list)
+	record_list = process_csv("orders.csv")
+	# insert_customers(record_list)
+	insert_orders(record_list)
 
-	check_records()
 
 	CONN.close()
 

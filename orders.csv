@@ -298,7 +298,7 @@ order_id,order_date,status,customer_id,email,address,city,state,postalcode,num_w
 1078,05/19/2014,Canceled,471,irene@flipbug.mil,7901 Loomis Hill,Marysville,NJ,53040-7735,6,0,15.00,0.90,20.94
 1080,05/15/2014,New,555,jessica@jumpxs.info,70 Buena Vista Junction,Lafayette,WI,92020,16,0,33.00,1.98,46.75
 1082,05/12/2014,Out for Delivery,23,karen@devbug.gov,37962 Hagan Pass,Belmont,ME,86807,19,0,50.50,3.03,56.12
-1083,05/05/2014,Delivered,295,irene@jaxnation.info,7294 Mcbride Alley,La Cañada Flintridge,TN,72841-0549,24,4,65.00,3.90,71.57
+1083,05/05/2014,Delivered,295,irene@jaxnation.info,7294 Mcbride Alley,La Canada Flintridge,TN,72841-0549,24,4,65.00,3.90,71.57
 1086,05/21/2014,Delivered,77,tina@livepath.mil,1039 Sunfield Crossing,Orinda,NM,74922-8121,86,0,234.25,14.05,256.61
 1092,05/07/2014,Canceled,562,kathy@cogidoo.edu,16598 Karstens Street,Dixon,MI,25611-0509,16,0,38.50,2.31,55.55
 1096,05/14/2014,Out for Delivery,563,lori@eamia.com,97 Marquette Lane,Palm Desert,NV,52501,15,15,76.50,4.59,85.52
@@ -538,7 +538,7 @@ order_id,order_date,status,customer_id,email,address,city,state,postalcode,num_w
 1840,04/27/2014,Delivered,730,rose@quimm.info,328 Manley Parkway,Solana Beach,KS,43548-3395,36,0,102.50,6.15,123.00
 1842,04/30/2014,New,512,melissa@jaxspan.com,236 Graceland Circle,Porterville,KS,91155,107,0,224.50,13.47,256.59
 1843,05/17/2014,Canceled,381,ann@jumpxs.info,7 Briar Crest Junction,San Luis Obispo,NJ,41390,32,3,82.47,4.95,103.75
-1845,05/09/2014,Delivered,747,lori@rhyloo.name,23 Oxford Center,La Cañada Flintridge,CT,29199,61,0,152.50,9.15,174.09
+1845,05/09/2014,Delivered,747,lori@rhyloo.name,23 Oxford Center,La Canada Flintridge,CT,29199,61,0,152.50,9.15,174.09
 1846,05/04/2014,Processing,378,julia@digitube.gov,082 Hintze Way,Long Beach,TN,13027,143,0,357.50,21.45,390.93
 1850,05/19/2014,Out for Delivery,120,karen@photobug.info,06 Lakeland Parkway,Calimesa,SC,19430,17,0,42.50,2.55,63.30
 1851,05/08/2014,New,239,lillian@leexo.biz,716 Dottie Center,Point Arena,NC,34898-5580,45,0,102.25,6.13,121.56
@@ -861,7 +861,7 @@ order_id,order_date,status,customer_id,email,address,city,state,postalcode,num_w
 2984,05/13/2014,Canceled,919,jennifer@latz.biz,085 Prairieview Pass,Dorris,IN,00738-0838,82,0,269.25,16.16,300.00
 2987,05/03/2014,New,177,deborah@zooveo.com,87 Rutledge Hill,Rosemead,IN,46973-1277,10,0,30.00,1.80,43.16
 2994,05/08/2014,Processing,493,sandra@talane.mil,27 Arizona Parkway,San Rafael,VT,62097,13,9,49.50,2.97,58.85
-2998,04/23/2014,New,695,christina@skibox.gov,3142 Di Loreto Trail,La Cañada Flintridge,NM,02870-4455,98,5,257.50,15.45,290.48
+2998,04/23/2014,New,695,christina@skibox.gov,3142 Di Loreto Trail,La Canda Flintridge,NM,02870-4455,98,5,257.50,15.45,290.48
 3008,04/27/2014,Delivered,352,joyce@skibox.net,8 Logan Plaza,Isleton,NM,79537,101,18,306.25,18.38,327.81
 3011,05/07/2014,Processing,8,linda@kazu.edu,87 Spenser Way,Imperial Beach,VA,49827,13,0,29.50,1.77,40.58
 3018,04/28/2014,Delivered,81,michelle@feedspan.biz,67852 Nancy Street,Antioch,RI,09545-5028,61,4,157.75,9.46,175.50
@@ -1517,7 +1517,7 @@ order_id,order_date,status,customer_id,email,address,city,state,postalcode,num_w
 5124,04/23/2014,Delivered,922,janet@leenti.info,18943 Clove Street,Rocklin,IN,25343,50,60,397.00,23.82,429.83
 5125,05/12/2014,New,182,andrea@trilia.net,76 Kim Alley,Los Altos,MT,61813,13,5,39.70,2.38,48.79
 5130,05/21/2014,Delivered,410,wanda@ailane.name,8543 Vermont Avenue,Hughson,VT,70495-8877,26,0,803.75,48.23,865.68
-5132,05/06/2014,Processing,582,rachel@realpoint.gov,3 Columbus Drive,La Cañada Flintridge,NC,11388-1500,28,0,2794.75,167.69,2981.66
+5132,05/06/2014,Processing,582,rachel@realpoint.gov,3 Columbus Drive,La Canada Flintridge,NC,11388-1500,28,0,2794.75,167.69,2981.66
 5134,05/12/2014,Processing,491,susan@bubblemix.org,29718 Del Sol Junction,Tracy,NE,12632,11,0,28.25,1.69,35.56
 5138,05/15/2014,New,315,rose@devify.net,3 South Park,Sunnyvale,KY,60105-4641,83,0,226.25,13.57,249.48
 5139,05/18/2014,Canceled,65,elizabeth@geba.com,6 Redwing Parkway,Pacifica,NY,98278-3718,0,1,0.99,0.06,9.96
@@ -1722,7 +1722,7 @@ order_id,order_date,status,customer_id,email,address,city,state,postalcode,num_w
 5808,05/14/2014,New,29,melissa@tagcat.edu,96428 Shopko Junction,Hollister,TN,97043,69,0,174.00,10.44,202.47
 5811,05/09/2014,Processing,397,laura@tazz.mil,5 Mallory Center,Farmersville,VT,73466,23,0,55.50,3.33,72.32
 5815,05/07/2014,Delivered,155,lois@aibox.org,74 Gina Court,Grass Valley,FL,08134,59,12,269.50,16.17,291.55
-5821,05/17/2014,Out for Delivery,747,lori@rhyloo.name,23 Oxford Center,La Cañada Flintridge,CT,29199,21,49,227.00,13.62,245.64
+5821,05/17/2014,Out for Delivery,747,lori@rhyloo.name,23 Oxford Center,La Canada Flintridge,CT,29199,21,49,227.00,13.62,245.64
 5830,05/04/2014,Processing,719,ann@devpoint.biz,1 Nova Terrace,Apple Valley,LA,86512,12,7,34.93,2.10,45.31
 5839,05/20/2014,Canceled,468,jacqueline@thoughtsphere.mil,38160 Brickson Park Terrace,Saratoga,AL,39496,6,0,15.00,0.90,34.21
 5847,05/07/2014,Delivered,742,irene@buzzdog.org,20 Vidon Way,Thousand Oaks,NV,14844,0,0,0.00,0.00,9.37
